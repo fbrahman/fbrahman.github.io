@@ -2,12 +2,14 @@
 
 body{
 	font-family: "Arial", "helvitica Neue", Helvetica, sans-serif;
+	color: #777777;
 }
 
 header{}
 
 footer{
 	clear: both;
+	background-color: #666666;
 }
 
 h1{
@@ -32,33 +34,58 @@ header nav ul li{
 	padding: 5px;
 }
 
-/*connection buttons*/
-#connect ul li{
-	display: inline-block;
+/*Navigation separators with using border*/
+/*header nav ul li+li {
+	border-left: 1px solid #000000
+}*/
+
+/*Navigation separators using symbol*/
+header nav ul li:not(:first-child):before {
+    content: " | ";
 }
 
-/*main body background*/
-.main{
-	background-image: url(../images/gray.png);
-	overflow: hidden;
-}
-
-/*wrapper for all content exclusive from body and .main*/
+/*wrapper for all content exclusive from body and .main inclusive of header and footer elements*/
 .wrapper{
 	max-width: 960px;
 	margin: auto;
 }
 
+.name{
+	background-color: #008dd2;
+	color: #ffffff;
+}
+
+/*main body background*/
+.main{
+	background-image: url(../images/gray.png);
+}
+
+
+/*wrapper for all contect exclusivce from body, .main, and footer elements.*/
+.flexbox{
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+}
+
 /*wrapper for main body right column for all pages*/
 #connect{
 	width: 270px;
-	float: right;
+}
+
+/*connection buttons*/
+#connect ul li{
+	display: inline-block;
 }
 
 /*wrapper for main body left column for all pages*/
 .mainleft{
 	width: 650px;
-	float: left;
+}
+
+#copyright{
+ color: #ffffff;
+ text-align: center;
 }
 
 /*applies to multiple attributes*/
@@ -72,8 +99,18 @@ h2, h3{
 	color:#008dd2;
 }
 
+.mainleft, #connect{
+	background-color: #ffffff;
+}
+
 /*Unique on each page */
 /*index.html*/
+
+	/*Float image to left of text*/
+	#aboutme img{
+		float: left;
+		padding-right: 10px;
+	}	
 
 /*contact.html*/
 
